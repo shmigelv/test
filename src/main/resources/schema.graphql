@@ -1,0 +1,33 @@
+#type Query{
+#    test(val:  Input1): String
+#}
+#
+#input Input1 {
+#    val: Input2
+##    val: Num
+#}
+#
+#input Input2 {
+#    val: Num
+#}
+#
+#enum Num {
+#    ONE, TWO, THREE
+#}
+
+
+type Query {
+    get(input: Input): String
+}
+
+input Input {
+    nestedInput: NestedInput
+}
+
+input NestedInput {
+    value: Values
+}
+
+enum Values {
+    ONE, TWO
+}
